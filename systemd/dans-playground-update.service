@@ -1,0 +1,11 @@
+[Unit]
+Description=Dan's Playground GitHub Update
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+User=root
+Group=root
+WorkingDirectory=/root/dans-playground
+ExecStart=/root/dans-playground/update.sh

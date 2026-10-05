@@ -61,7 +61,7 @@ if [ -f "$AUTODARTS_CONFIG_BACKUP" ]; then
     rm -f "$AUTODARTS_CONFIG_BACKUP"
 fi
 
-chown board:board "$AUTODARTS_CONFIG"
+chown root:root "$AUTODARTS_CONFIG"
 chmod 600 "$AUTODARTS_CONFIG"
 
 log "Neuer Stand:"
