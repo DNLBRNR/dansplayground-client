@@ -1,0 +1,21 @@
+[Unit]
+Description=Dan's Playground Board Agent
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+User=board
+Group=board
+
+WorkingDirectory=/home/board
+
+ExecStart=/usr/bin/python3 /home/board/board_agent.py
+
+Restart=always
+RestartSec=5
+
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target

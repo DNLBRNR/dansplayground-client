@@ -1,0 +1,27 @@
+[Unit]
+Description=Dan's Playground Dart Bridge
+Wants=network-online.target
+After=network-online.target
+After=autodarts.service
+After=dans-playground-agent.service
+
+[Service]
+Type=simple
+User=board
+Group=board
+
+WorkingDirectory=/home/board/dartbridge
+
+# Auf einem frischen Pi warten, bis der Board Agent
+# die Board-Identität angelegt hat.
+ExecStartPre=/bin/bash -c 'until [ -f /var/lib/dans-playground/board.json ]; do sleep 2; done'
+
+ExecStart=/home/board/dartbridge/venv/bin/python /home/board/dartbridge/bridge.py
+
+Restart=always
+RestartSec=5
+
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target

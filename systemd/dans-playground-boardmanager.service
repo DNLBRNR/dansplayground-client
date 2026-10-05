@@ -1,0 +1,17 @@
+[Unit]
+Description=Dan's Playground Local Autodarts Board Manager
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+User=board
+Group=board
+WorkingDirectory=/home/board/boardmanager/server
+ExecStart=/usr/bin/python3 /home/board/boardmanager/server/server.py
+Restart=always
+RestartSec=2
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target

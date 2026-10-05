@@ -1,0 +1,12 @@
+# Dan's Playground board identity / credentials
+board.json
+/var/lib/dans-playground/board.json
+
+# Private keys / certificates
+*.key
+*.pem
+*.p12
+*.pfx
+
+# Git
+.git/

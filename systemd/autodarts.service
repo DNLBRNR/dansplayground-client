@@ -1,0 +1,16 @@
+# autodarts.service
+
+[Unit]
+Description=Start/Stop Autodarts board service
+Wants=network-online.target dans-playground-boardmanager.service
+After=network.target network-online.target dans-playground-boardmanager.service
+
+[Service]
+User=board
+ExecStart=/home/board/start-autodarts.sh
+Restart=on-failure
+KillSignal=SIGINT
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target
