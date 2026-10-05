@@ -7,8 +7,8 @@ After=network-online.target
 Type=simple
 User=board
 Group=board
-WorkingDirectory=/home/board/boardmanager/server
-ExecStart=/usr/bin/python3 /home/board/boardmanager/server/server.py
+WorkingDirectory=/root/dans-playground/boardmanager/server
+ExecStart=/usr/bin/python3 /root/dans-playground/boardmanager/server/server.py
 Restart=always
 RestartSec=2
 Environment=PYTHONUNBUFFERED=1

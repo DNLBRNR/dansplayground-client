@@ -1,7 +1,7 @@
 from http.server import ThreadingHTTPServer, SimpleHTTPRequestHandler
 from pathlib import Path
 
-ROOT = Path("/home/board/boardmanager/bm.autodarts.io").resolve()
+ROOT = Path("/root/dans-playground/boardmanager/bm.autodarts.io").resolve()
 
 class SPAHandler(SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs):

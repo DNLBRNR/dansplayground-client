@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Autodarts starten
-/home/board/.local/opt/autodarts/autodarts &
+/root/dans-playground/.local/opt/autodarts/autodarts &
 AUTODARTS_PID=$!
 
 # Warten, bis die API verfügbar ist

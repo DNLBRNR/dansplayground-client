@@ -8,9 +8,9 @@ Type=simple
 User=board
 Group=board
 
-WorkingDirectory=/home/board
+WorkingDirectory=/root/dans-playground
 
-ExecStart=/usr/bin/python3 /home/board/board_agent.py
+ExecStart=/usr/bin/python3 /root/dans-playground/board_agent.py
 
 Restart=always
 RestartSec=5

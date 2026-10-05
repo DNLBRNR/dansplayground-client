@@ -10,13 +10,13 @@ Type=simple
 User=board
 Group=board
 
-WorkingDirectory=/home/board/dartbridge
+WorkingDirectory=/root/dans-playground/dartbridge
 
 # Auf einem frischen Pi warten, bis der Board Agent
 # die Board-Identität angelegt hat.
 ExecStartPre=/bin/bash -c 'until [ -f /var/lib/dans-playground/board.json ]; do sleep 2; done'
 
-ExecStart=/home/board/dartbridge/venv/bin/python /home/board/dartbridge/bridge.py
+ExecStart=/root/dans-playground/dartbridge/venv/bin/python /root/dans-playground/dartbridge/bridge.py
 
 Restart=always
 RestartSec=5
