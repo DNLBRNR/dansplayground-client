@@ -1,4 +1,4 @@
-#!/root/dans-playground/dartbridge/venv/bin/python3
+#!/root/dans-playground/dartbridge/venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
