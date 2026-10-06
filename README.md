@@ -1,113 +1,111 @@
 # 🎯 Dan's Playground
 
-Dan's Playground ist eine Plattform für Dart-Spiele mit Unterstützung für physische Dartboards über den Dan's Playground Board Agent.
+Dan's Playground is a platform for dart games with support for physical dartboards through the Dan's Playground Board Agent.
 
-Das Projekt ist für mehrere Benutzer und mehrere Dartboards ausgelegt. Ein Raspberry Pi übernimmt dabei die Verbindung zwischen dem physischen Dartboard und der Dan's Playground-Plattform.
+The project is designed for multiple users and multiple dartboards. A Raspberry Pi handles the connection between the physical dartboard and the Dan's Playground platform.
 
 ---
 
-## 🚀 Installation auf einem neuen Raspberry Pi
+## 🚀 Installation on a new Raspberry Pi
 
-### Voraussetzungen
+### Prerequisites
 
 - Debian / Raspberry Pi OS 64-bit
-- Internetverbindung
-- SSH-Zugriff
-- `sudo`-Rechte
+- Internet connection
+- SSH access
+- `sudo` privileges
 
-### 1. Git installieren
+### 1. Install Git
 
-Auf einem frisch installierten System zuerst Git installieren:
+On a freshly installed system, first install Git:
 
 ```bash
 sudo apt update
 sudo apt install -y git
 ```
 
-### 2. Dan's Playground herunterladen
+### 2. Download Dan's Playground
 
-Das Repository ist öffentlich und kann direkt über HTTPS geklont werden:
+The repository is public and can be cloned directly via HTTPS:
 
 ```bash
 sudo git clone https://github.com/DNLBRNR/dansplayground-client.git /root/dans-playground
 ```
 
-### 3. Installation starten
+### 3. Start the installation
 
 ```bash
 sudo /root/dans-playground/install.sh
 ```
 
-Der Installer übernimmt anschließend automatisch:
+The installer will automatically take care of:
 
-- benötigte Systempakete
-- Python-Umgebung für die Dart Bridge
-- benötigte Python-Pakete
+- required system packages
+- Python environment for the Dart Bridge
+- required Python packages
 - Dan's Playground Board Agent
-- lokalen Board Manager
+- local Board Manager
 - Autodarts
-- systemd Services
-- automatischen GitHub-Updater
-- Update-Timer
+- systemd services
+- automatic GitHub updater
+- update timer
 
-Die individuelle Board-Identität wird **nicht** im GitHub-Repository gespeichert.
+The individual board identity is **not** stored in the GitHub repository.
 
 ---
 
-## 🔄 Automatische Updates
+## 🔄 Automatic Updates
 
-Nach der Installation prüft Dan's Playground automatisch regelmäßig auf neue Versionen im GitHub-Repository.
+After installation, Dan's Playground automatically checks for new versions in the GitHub repository at regular intervals.
 
-Updates werden ausschließlich über:
+Updates are performed exclusively through:
 
 ```text
 GitHub → update.sh
 ```
 
-durchgeführt.
-
-Der offizielle Autodarts-Updater bleibt deaktiviert.
+The official Autodarts updater remains disabled.
 
 ---
 
-## 🗑️ Deinstallation
+## 🗑️ Uninstallation
 
-Wenn Dan's Playground vollständig von einem Raspberry Pi entfernt werden soll:
+If Dan's Playground should be completely removed from a Raspberry Pi:
 
 ```bash
 sudo /root/dans-playground/uninstall.sh
 ```
 
-Der Deinstaller fragt zur Sicherheit nach einer Bestätigung.
+The uninstaller asks for confirmation before proceeding.
 
-Entfernt werden unter anderem:
+The following will be removed, among other things:
 
-- Dan's Playground Services
-- Update-Timer
+- Dan's Playground services
+- update timer
 - `/root/dans-playground`
 - `/var/lib/dans-playground`
 - `/etc/dans-playground`
 
-Das GitHub-Repository selbst wird dabei **nicht** verändert.
+The GitHub repository itself will **not** be modified.
 
 ---
 
-## 📁 Wichtige Verzeichnisse
+## 📁 Important Directories
 
-| Pfad | Beschreibung |
+| Path | Description |
 |---|---|
-| `/root/dans-playground` | Lokale Installation |
-| `/var/lib/dans-playground` | Persistente Board-Daten |
-| `/etc/dans-playground` | Systemweite Konfiguration |
-| `/var/lib/dans-playground/board.json` | Individuelle Board-Identität |
+| `/root/dans-playground` | Local installation |
+| `/var/lib/dans-playground` | Persistent board data |
+| `/etc/dans-playground` | System-wide configuration |
+| `/var/lib/dans-playground/board.json` | Individual board identity |
 
-`board.json` wird bewusst nicht in GitHub gespeichert, da diese Datei die individuelle Identität des jeweiligen Boards enthält.
+`board.json` is intentionally not stored in GitHub because this file contains the identity of the individual board.
 
 ---
 
-## 🧪 Test einer Neuinstallation
+## 🧪 Testing a New Installation
 
-Für einen neuen Test-Pi reicht:
+For a new test Pi, the following is sufficient:
 
 ```bash
 sudo apt update
@@ -116,21 +114,21 @@ sudo git clone https://github.com/DNLBRNR/dansplayground-client.git /root/dans-p
 sudo /root/dans-playground/install.sh
 ```
 
-Damit lässt sich eine komplette Neuinstallation reproduzierbar testen.
+This allows a complete installation to be reproduced and tested.
 
 ---
 
-## 📌 Projektstatus
+## 📌 Project Status
 
-Dan's Playground befindet sich aktuell in aktiver Entwicklung.
+Dan's Playground is currently under active development.
 
-Die aktuelle Installation enthält unter anderem:
+The current installation includes, among other things:
 
 - Autodarts Board Software
 - Dan's Playground Board Agent
-- lokalen Board Manager
+- local Board Manager
 - Dart Bridge
-- automatische GitHub-Updates
-- Board-Provisionierung / Pairing
+- automatic GitHub updates
+- board provisioning / pairing
 
-Weitere Funktionen wie Benutzerkonten, mehrere Boards und Online-Multiplayer sind Teil der weiteren Entwicklung.
+Further features such as user accounts, multiple boards, and online multiplayer are part of the ongoing development.
