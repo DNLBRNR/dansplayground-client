@@ -90,13 +90,18 @@ chmod 600 "$AUTODARTS_CONFIG"
 
 log "Richte Dart-Bridge Python-Umgebung ein"
 
-if [ ! -d "$VENV_DIR" ]; then
-    python3 -m venv "$VENV_DIR"
+# Das mit Git ausgelieferte venv ist nicht portabel zwischen
+# verschiedenen Systemen/Python-Installationen.
+# Deshalb wird das lokale venv auf dem Zielsystem neu aufgebaut.
+if [ -d "$VENV_DIR" ]; then
+    rm -rf "$VENV_DIR"
 fi
+
+python3 -m venv "$VENV_DIR"
 
 "$VENV_DIR/bin/python" -m pip install --upgrade pip
 
-"$VENV_DIR/bin/pip" install --upgrade \
+"$VENV_DIR/bin/pip" install \
     paho-mqtt \
     websocket-client
 

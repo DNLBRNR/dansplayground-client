@@ -6,7 +6,7 @@ Wants=network-online.target dans-playground-boardmanager.service
 After=network.target network-online.target dans-playground-boardmanager.service
 
 [Service]
-User=board
+User=root
 ExecStart=/root/dans-playground/start-autodarts.sh
 Restart=on-failure
 KillSignal=SIGINT

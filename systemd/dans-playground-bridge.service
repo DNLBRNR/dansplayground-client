@@ -7,8 +7,8 @@ After=dans-playground-agent.service
 
 [Service]
 Type=simple
-User=board
-Group=board
+User=root
+Group=root
 
 WorkingDirectory=/root/dans-playground/dartbridge
 

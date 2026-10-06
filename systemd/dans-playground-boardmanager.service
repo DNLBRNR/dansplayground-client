@@ -5,8 +5,8 @@ After=network-online.target
 
 [Service]
 Type=simple
-User=board
-Group=board
+User=root
+Group=root
 WorkingDirectory=/root/dans-playground/boardmanager/server
 ExecStart=/usr/bin/python3 /root/dans-playground/boardmanager/server/server.py
 Restart=always
