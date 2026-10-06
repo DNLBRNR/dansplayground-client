@@ -54,6 +54,44 @@ The individual board identity is **not** stored in the GitHub repository.
 
 ---
 
+## 🌐 Network Ports
+
+Dan's Playground uses the following local ports on the Raspberry Pi:
+
+| Port | Service | Description |
+|---|---|---|
+| `8080` | Dan's Playground Board Agent | Board provisioning, pairing and local board communication |
+| `3180` | Autodarts | Local Autodarts HTTP/WebSocket API |
+
+### Board Agent
+
+The Dan's Playground Board Agent is available at:
+
+```text
+http://<raspberry-pi-ip>:8080
+```
+
+For example:
+
+```text
+http://192.168.178.50:8080
+```
+
+Port `8080` is used for board provisioning and pairing.
+
+### Autodarts API
+
+The local Autodarts API is available on:
+
+```text
+http://<raspberry-pi-ip>:3180
+```
+
+Port `3180` is used by the local Autodarts HTTP/WebSocket API and is used by the Dan's Playground software to communicate with Autodarts.
+
+---
+
+
 ## 🔄 Automatic Updates
 
 After installation, Dan's Playground automatically checks for new versions in the GitHub repository at regular intervals.
