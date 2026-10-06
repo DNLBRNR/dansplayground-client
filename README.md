@@ -130,7 +130,6 @@ Die aktuelle Installation enthält unter anderem:
 - Dan's Playground Board Agent
 - lokalen Board Manager
 - Dart Bridge
-- MQTT-Unterstützung
 - automatische GitHub-Updates
 - Board-Provisionierung / Pairing
 
